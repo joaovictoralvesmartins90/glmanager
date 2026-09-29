@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:18.6
+    container_name: glmanager-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+      POSTGRES_DB: glmanager
+    ports:
+      - "5432:5432"
+    volumes:
+      # No Postgres 18+ o volume é montado em /var/lib/postgresql (não mais em /data)
+      - pgdata:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d glmanager"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  pgdata:

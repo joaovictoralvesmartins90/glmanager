@@ -1,0 +1,6 @@
+@glmanager_HostAddress = http://localhost:5168
+
+GET {{glmanager_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

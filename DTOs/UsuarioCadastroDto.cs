@@ -6,4 +6,5 @@ public class UsuarioCadastroDto
     public string Password { get; set; }
     public string NomeCompleto { get; set; }
     public string Cpf { get; set; }
+    public DateOnly DataNascimento { get; set; }
 }

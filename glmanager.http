@@ -4,7 +4,7 @@
 POST {{url}}/register
 Content-Type: application/json
 
-{ "email": "ana@teste.com", "password": "Senh@1234" }
+{ "email": "ana@teste.com", "password": "Senh@1234", "nomeCompleto": "Ana teste" }
 
 ### Login (devolve um token)
 POST {{url}}/login

@@ -12,7 +12,7 @@ using glmanager.Data;
 namespace glmanager.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260929210809_Inicial")]
+    [Migration("20260929223337_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -168,6 +168,13 @@ namespace glmanager.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("text");
+
+                    b.Property<string>("Cpf")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateOnly>("DataNascimento")
+                        .HasColumnType("date");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)

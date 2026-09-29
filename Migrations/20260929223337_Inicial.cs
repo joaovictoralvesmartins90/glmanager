@@ -32,6 +32,8 @@ namespace glmanager.Migrations
                 {
                     Id = table.Column<string>(type: "text", nullable: false),
                     NomeCompleto = table.Column<string>(type: "text", nullable: false),
+                    Cpf = table.Column<string>(type: "text", nullable: false),
+                    DataNascimento = table.Column<DateOnly>(type: "date", nullable: false),
                     UserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "character varying(256)", maxLength: 256, nullable: true),

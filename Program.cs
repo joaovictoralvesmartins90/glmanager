@@ -1,5 +1,6 @@
 using glmanager.Data;
 using glmanager.Models;
+using glmanager.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,8 @@ builder.Services.AddIdentityApiEndpoints<Usuario>(options =>
 })
 .AddRoles<IdentityRole>() //liga suporte a roles (papéis)
 .AddEntityFrameworkStores<AppDbContext>(); //Guarda os dados via entity framework através do dbcontext
+
+builder.Services.AddScoped<IUsuariosService, UsuariosService>();
 
 var app = builder.Build();
 

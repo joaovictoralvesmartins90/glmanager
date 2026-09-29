@@ -10,4 +10,12 @@ public class AppDbContext: IdentityDbContext<Usuario>
     {
         
     }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
+        
+        builder.Entity<Usuario>().Property(u => u.NomeCompleto).IsRequired();
+        builder.Entity<Usuario>().Property(u => u.Cpf).IsRequired();
+    }
 }

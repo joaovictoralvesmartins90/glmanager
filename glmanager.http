@@ -1,6 +1,17 @@
-@glmanager_HostAddress = http://localhost:5168
+@url = http://localhost:5168
 
-GET {{glmanager_HostAddress}}/weatherforecast/
-Accept: application/json
+### Cadastro
+POST {{url}}/register
+Content-Type: application/json
 
-###
+{ "email": "ana@teste.com", "password": "Senh@1234" }
+
+### Login (devolve um token)
+POST {{url}}/login
+Content-Type: application/json
+
+{ "email": "ana@teste.com", "password": "Senha1234" }
+
+### Rota protegida (cole o accessToken do login)
+GET {{url}}/eu
+Authorization: Bearer COLE_O_TOKEN_AQUI
